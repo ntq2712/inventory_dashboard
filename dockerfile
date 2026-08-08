@@ -12,5 +12,5 @@ RUN npm run build
 
 EXPOSE 4173
 
-# for review
+# just for review, need to config in vite config
 CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0"]
