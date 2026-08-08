@@ -7,8 +7,5 @@ export default defineConfig({
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
-  ],
-  preview: {
-    allowedHosts: ['inventory.quinguyen.cloud'],
-  },
+  ]
 })
