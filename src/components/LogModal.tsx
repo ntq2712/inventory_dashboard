@@ -1,20 +1,25 @@
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Form, Input, Modal, notification, Select } from "antd";
 import { useState } from "react";
 import { AiOutlineAudit } from "react-icons/ai";
-import { ActionStatus } from "../mocks/data/actionStatus";
-import styles from "./vehicleList.module.css";
-import { useQuery } from "@tanstack/react-query";
 import endpoint from "../apis/endpointConfig";
 import { vehiclesApi } from "../apis/vehicles";
+import { ActionStatus } from "../mocks/data/actionStatus";
+import styles from "./vehicleList.module.css";
 
 interface LogModalProps {
   item?: Vehicle;
 }
 
 function LogModal({ item }: LogModalProps) {
+  const [form] = Form.useForm();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const selectAction = Form.useWatch<string | undefined>("action", form);
+
   const [api, contextHolder] = notification.useNotification();
+
+  const queryClient = useQueryClient();
 
   const openNotificationWithIcon = () => {
     api.success({
@@ -36,7 +41,10 @@ function LogModal({ item }: LogModalProps) {
   const handleOk = () => {
     setIsModalOpen(false);
 
-    console.log("Vehicle:", item);
+    queryClient.invalidateQueries({
+      queryKey: [endpoint.vehicles.list],
+      refetchType: "all",
+    });
 
     openNotificationWithIcon();
   };
@@ -62,10 +70,15 @@ function LogModal({ item }: LogModalProps) {
         onOk={handleOk}
         okText="Log"
         onCancel={handleCancel}
+        okButtonProps={{ disabled: !selectAction }}
       >
         {!isLoading && (
-          <Form layout="vertical" className={styles["log-model-form"]}>
-            <Form.Item label="Action" name="action_status">
+          <Form
+            form={form}
+            layout="vertical"
+            className={styles["log-model-form"]}
+          >
+            <Form.Item label="Action" name="action">
               <Select
                 defaultValue={data?.actionType}
                 options={Object.entries(ActionStatus).map(([key, value]) => ({
