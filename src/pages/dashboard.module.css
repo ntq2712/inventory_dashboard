@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.vehicle-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}

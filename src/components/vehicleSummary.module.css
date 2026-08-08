@@ -1,0 +1,115 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.item {
+    grid-column: span 1;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: translateY(-2px);
+        transition: all 0.3s linear;
+    }
+
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+
+        &.total {
+            background-color: rgba(10, 143, 220, 0.2);
+            color: #0A8FDC;
+        }
+
+        &.available {
+            background-color: rgba(84, 180, 53, 0.2);
+            color: #54B435;
+        }
+
+        &.aging {
+            background-color: rgba(255, 57, 57, 0.2);
+            color: #ff3939;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        .value {
+            font-size: 30px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .title {
+            font-size: 16px;
+            color: #475569;
+        }
+    }
+
+    .change-indicator {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 14px;
+        flex-direction: column;
+        gap: 4px;
+        margin-left: auto;
+
+
+        .change-value {
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+
+            &.positive {
+                color: #059669;
+            }
+
+            &.negative {
+                color: #dc2626;
+            }
+
+
+            .indicator-icon {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,233 @@
+.vehicle-table-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: hidden;
+}
+
+.vehicle-table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.vehicle-tbl-thead {
+    tr>th {
+        text-align: left;
+        font-weight: 600;
+        color: #334155;
+        padding: 8px 16px;
+        font-size: 14px;
+        border-right: 1px solid #e2e8f0;
+        padding-right: 16px;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
+
+.vehicle-tbl-body {
+
+    tr {
+        cursor: pointer;
+        border-bottom: 1px solid #f1f5f9;
+        transition: 0.2s all linear;
+    }
+
+    tr:hover {
+        background-color: #f1f5f9;
+    }
+
+    .vehicle-expand-row {
+        cursor: pointer;
+        border-bottom: 1px solid #f1f5f9;
+        background-color: #f1f5f9;
+        height: 40px;
+    }
+}
+
+.tbl-item-aging {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+        font-weight: 500;
+        color: white;
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+}
+
+.vehicle-vin-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: #0a64f6;
+    }
+}
+
+.expand-btn {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+
+    outline: none;
+    border: 1px solid #cdcdcd;
+    background: none;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #cdcdcd;
+    }
+}
+
+.tbl-item-color {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .text {
+        font-weight: 600;
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 4px;
+    }
+}
+
+.loading-container {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbl-item-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    .action-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 8px 8px;
+        border-radius: 8px;
+        /* css removed border button  */
+        border: none;
+        outline: none;
+        background: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &.view-btn {
+            color: #3b82f6;
+            background-color: white;
+
+
+            &:hover {
+                background-color: #85a7f3;
+            }
+
+            &:active {
+                background-color: #3b82f6;
+                color: white;
+            }
+        }
+
+        &.edit-btn {
+            color: #facc15;
+            background-color: white;
+
+            &:hover {
+                background-color: #f6de96;
+            }
+        }
+
+        &.delete-btn {
+            color: #ef4444;
+            background-color: white;
+
+            &:hover {
+                background-color: #ea9292;
+            }
+        }
+
+        .action-btn-icon {
+            font-size: 16px;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vehicle-list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding-bottom: 8px;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .vehicle-list-header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width: 600px) {
+            justify-content: space-between;
+        }
+
+
+        .search-input {
+            width: 300px;
+            height: 40px;
+        }
+    }
+
+
+}
+
+.log-model-form {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
