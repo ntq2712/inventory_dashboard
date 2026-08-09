@@ -64,7 +64,7 @@ export const getVehicles = (vehicleFilter: VehicleFilter) => {
 
       const daysInStock = now.diff(createdAt, "days");
 
-      temp.isAging = daysInStock >= 90;
+      temp.isAging = daysInStock > 90;
 
       return temp;
     });
