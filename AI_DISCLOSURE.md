@@ -4,12 +4,14 @@ This project was developed with assistance from GitHub Copilot Agent as a produc
 
 ### How AI Was Used
 
+To improve the effectiveness of AI-assisted development, I created a dedicated design document that serves as a reference for the AI agent throughout the project. The document describes the intended architecture, project structure, data flow, business requirements, and the responsibilities of each folder and module. This helps the AI better understand the project's context and align its suggestions with the established design decisions rather than generating isolated code snippets without architectural awareness.
+
 GitHub Copilot Agent was primarily used to:
 
 * Accelerate boilerplate code generation
 * Suggest TypeScript typings and component scaffolding
 * Generate repetitive CRUD-related code
-* Assist with documentation and code refactoring suggestions
+* Assist with documentation
 
 ### Development Approach
 
@@ -36,6 +38,7 @@ The core business logic and critical application behaviors were designed and imp
 * State management integration
 * API interaction patterns
 * Component composition and application structure
+* Testing integration
 
 These areas were intentionally implemented and controlled directly to ensure correctness, maintainability, and alignment with the project requirements.
 
